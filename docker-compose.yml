@@ -3,4 +3,6 @@ services:
   robot:
     image: ruffsl/arm32v7_ros2:crystal-source
     volumes:
-      - ./src:root/ros2_ws/walkaround
+      - ./src:/root/robot_ws/src/walkaround
+    working_dir: /root/robot_ws
+    command: tail -F anything # keep it running
